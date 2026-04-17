@@ -22,13 +22,15 @@ export default function Footer() {
           <h2 className="text-2xl font-bold text-white mb-4">Contactez-nous</h2>
           <ul>
             <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <Mail className="text-white" /> contact@acceent.sn
+              <Mail className="text-white" /> info@acceent.org
             </li>
             <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <Phone className="text-white" /> +221 33 888 88 88
+              <Phone className="text-white" /> +221 33 902 06 45 / +221 76 501
+              91 91
             </li>
             <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <MapPin className="text-white" /> Dakar, Sénégal
+              <MapPin className="text-white" /> Quartier Santhiaba, Ziguinchor,
+              Sénégal
             </li>
           </ul>
         </div>
