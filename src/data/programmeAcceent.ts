@@ -1,75 +1,73 @@
 import { Programme } from "@/types/programme";
+
 export const programmes: Programme[] = [
   {
     id: 1,
-    title: "ACCEENT4ELLES",
+    title: "éducation",
     description:
-      "Accompagnement des jeunes filles vulnérables avec des formations adaptées et des activités de confiance en soi.",
-    imageUrl: "/image/acceent4elles.jpeg",
-    link: "/Décourir-ACCEENT4ELLES",
-    category: "Education",
+      "Formations adaptées et accompagnement éducatif pour renforcer les capacités et l'autonomie des jeunes en milieu rural.",
+    link: "/education",
+    image: "/image/education.jpg",
   },
   {
     id: 2,
-    title: "TUT'TANK",
+    title: "Entreprenariat",
     description:
-      "Développement de la pensée critique et soutien familial pour une meilleure éducation des enfants",
-    imageUrl: "/image/tut-tank.jpeg",
-    link: "/Décourir-TUT'TANK",
-    category: "Education",
+      "Soutien au développement de projets entrepreneuriaux et accompagnement des jeunes entrepreneurs dans leur parcours de création d'entreprise.",
+    link: "/entreprenariat",
+    image: "/image/entreprenariat.jpeg",
   },
   {
     id: 3,
-    title: "ACCEENT'INCUB",
+    title: "Numérique",
     description:
-      "Programme d'incubation dédié aux jeunes porteurs et porteuses de projets de la région de Ziguinchor.",
-    imageUrl: "/image/acceent-incub.jpeg",
-    link: "/Décourir-ACCEENT'INCUB",
-    category: "Entreprenariat",
+      "Accès à la formation numérique et transformation digitale pour développer les compétences technologiques et stimuler l'innovation locale.",
+    link: "/numerique",
+    image: "/image/wro.webp",
   },
-  {
-    id: 4,
-    title: "Atelier entrepreneuriat",
-    description:
-      "Encourager l'esprit d'entreprise chez les jeunes de Ziguinchor, moments forts à revivre.",
-    imageUrl: "/image/entreprenariat.jpeg",
-    link: "/Décourir-Atelier-entrepreneuriat",
-    category: "Entreprenariat",
-  },
-  {
-    id: 5,
-    title: "Carnaval de Santhiaba",
-    description:
-      "Un moment fort pour la culture locale et la cohésion sociale, retour en images.",
-    imageUrl: "/image/carnaval.jpeg",
-    link: "/Décourir-Carnaval-de-Santhiaba",
-    category: "Culture",
-  },
-  {
-    id: 6,
-    title: "Forum des acteurs locaux",
-    description:
-      "Rencontres et échanges autour du développement local à Ziguinchor.",
-    imageUrl: "/image/forum.jpeg",
-    link: "/Décourir-Forum-des-acteurs-locaux",
-    category: "Education",
-  },
-  {
-    id: 7,
-    title: "YAAKAAR Jeunesse & Entrepreneuriat (YEAH)",
-    description:
-      "Programme d'accompagnement des jeunes sénégalais dans l'entrepreneuriat agricole et le développement durable.",
-    imageUrl: "/image/yaakarr.png",
-    link: "/Décourir-YAAKAAR-Jeunesse-&-Entrepreneuriat-(YEAH)",
-    category: "Entreprenariat",
-  },
-  {
-    id: 8,
-    title: "World Robot Olympiad (WRO)",
-    description:
-      "Compétition internationale de robotique éducative pour stimuler la créativité et l'innovation technologique chez les jeunes.",
-    imageUrl: "/image/wro.webp",
-    link: "/Décourir-World-Robot-Olympiad-(WRO)",
-    category: "Technologie",
-  },
+  // {
+  //   id: 4,
+  //   title: "Atelier entrepreneuriat",
+  //   description:
+  //     "Encourager l'esprit d'entreprise chez les jeunes de Ziguinchor, moments forts à revivre.",
+  //   imageUrl: "/image/entreprenariat.jpeg",
+  //   link: "/Décourir-Atelier-entrepreneuriat",
+  //   category: "Entreprenariat",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Carnaval de Santhiaba",
+  //   description:
+  //     "Un moment fort pour la culture locale et la cohésion sociale, retour en images.",
+  //   imageUrl: "/image/carnaval.jpeg",
+  //   link: "/Décourir-Carnaval-de-Santhiaba",
+  //   category: "Culture",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Forum des acteurs locaux",
+  //   description:
+  //     "Rencontres et échanges autour du développement local à Ziguinchor.",
+  //   imageUrl: "/image/forum.jpeg",
+  //   link: "/Décourir-Forum-des-acteurs-locaux",
+  //   category: "Education",
+  // },
+  // {
+  //   id: 7,
+  //   title: "YAAKAAR Jeunesse & Entrepreneuriat (YEAH)",
+  //   description:
+  //     "Programme d'accompagnement des jeunes sénégalais dans l'entrepreneuriat agricole et le développement durable.",
+  //   imageUrl: "/image/yaakarr.png",
+  //   link: "/Décourir-YAAKAAR-Jeunesse-&-Entrepreneuriat-(YEAH)",
+  //   category: "Entreprenariat",
+  // },
+  // {
+  //   id: 8,
+  //   title: "World Robot Olympiad (WRO)",
+  //   description:
+  //     "Compétition internationale de robotique éducative pour stimuler la créativité et l'innovation technologique chez les jeunes.",
+  //   imageUrl: "/image/wro.webp",
+  //   link: "/Décourir-World-Robot-Olympiad-(WRO)",
+  //   category: "Technologie",
+  // },
 ];

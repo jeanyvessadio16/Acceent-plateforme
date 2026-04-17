@@ -11,18 +11,18 @@ export default function Header() {
   const [isMenuOpen, setIsMenu] = useState(false);
   const pathname = usePathname();
 
-  // links items
+  // liens items
   const navbarItems = [
     { name: "Accueil", href: "/" },
-    { name: "Education", href: "/education" },
-    { name: "Entreprenariat", href: "/entreprenariat" },
-    { name: "Numérique", href: "/numerique" },
-    { name: "Contact", href: "/contact" },
+    { name: "À propos", href: "/#about" },
+    { name: "Contact", href: "/#contact" },
   ];
 
   return (
     <>
+      {/* Entete */}
       <header className="w-full fixed px-6 md:px-10 py-4 flex justify-between items-center bg-primary/80 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
+        {/* logo ACCEENT */}
         <div className="logo relative overflow-hidden group">
           <Link
             href="/"

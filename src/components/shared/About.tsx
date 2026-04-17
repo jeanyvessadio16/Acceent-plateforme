@@ -1,5 +1,6 @@
-import AboutSection from "../layout/Aboutsection";
-import AboutVision from "../layout/Vision";
+// Composant about
+
+import AboutSection from "@/pages/Aboutsection";
 
 export default function About() {
   const aboutData = {
@@ -9,24 +10,11 @@ export default function About() {
     imageUrl: "/image/aboutImage.jpg",
   };
 
-  const aboutVision = {
-    title: "Vision et Missions",
-    description:
-      "Acceent s'engage à autonomiser les populations locales, notamment les jeunes et les femmes, en leur offrant des outils adaptés pour surmonter les défis socio-économiques. L'organisation croit fermement en la création de solutions créatives et adaptées pour améliorer les conditions de vie des communautés locales. Elle aspire à faire de ses bénéficiaires des acteurs du changement, en les dotant des compétences nécessaires pour participer activement au développement de leur territoire. En savoir plus sur notre engagement culturel et social ou consultez notre Agend’Acceent.",
-    imageUrl: "/image/vision.jpeg",
-  };
-  
   return (
     <>
-      {/* sections about */}
-      <section className="container mx-auto max-w-7xl py-24 px-6 md:px-10 space-y-24">
+      {/* sections à propos */}
+      <section>
         <AboutSection {...aboutData} />
-        
-        <div className="flex justify-center mx-auto opacity-20">
-          <div className="w-1/2 h-px bg-gradient-to-r from-transparent via-white to-transparent"></div>
-        </div>
-        
-        <AboutVision {...aboutVision} />
       </section>
     </>
   );

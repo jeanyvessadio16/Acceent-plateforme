@@ -1,5 +1,5 @@
 export interface Section {
-  title: string;
+  title?: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
 }

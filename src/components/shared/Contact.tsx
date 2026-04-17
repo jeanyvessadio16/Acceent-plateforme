@@ -1,3 +1,5 @@
+// Composant contact
+
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { Input } from "../ui/input";
@@ -7,7 +9,8 @@ import { Send } from "lucide-react";
 export default function Contact() {
   return (
     <>
-      <section className="py-24 px-6 md:px-10 container mx-auto max-w-5xl flex flex-col justify-center items-center space-y-12">
+      <section className="py-24 px-6 md:px-10 bg-accent flex flex-col justify-center items-center space-y-12">
+        {/* titre et description */}
         <div className="text-center space-y-4">
           <h2 className="text-3xl md:text-5xl font-extrabold text-primary">
             Contactez-nous
@@ -19,11 +22,12 @@ export default function Contact() {
           <div className="w-20 h-1.5 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full mt-4"></div>
         </div>
 
-        <Card className="w-full bg-white p-8 md:p-10 shadow-2xl rounded-3xl border border-gray-100 relative overflow-hidden">
+        <Card className="w-full bg-white p-8 md:p-10 shadow-lg rounded-3xl border border-gray-100 relative overflow-hidden">
           {/* Decorative gradients */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
 
+          {/* formulaire */}
           <form className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-2">
               <Label htmlFor="name" className="text-primary font-semibold">
