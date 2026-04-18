@@ -23,14 +23,8 @@ export default function Home() {
             }}
           ></div>
 
-          {/* Elegant Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-tr from-primary/92 via-primary/75 to-primary/50"></div>
-          <div className="absolute top-20 right-10 w-72 h-72 bg-gradient-to-bl from-secondary/20 to-transparent rounded-full blur-3xl -z-10 animate-float"></div>
-          <div
-            className="absolute bottom-20 left-10 w-96 h-96 bg-gradient-to-tr from-accent/10 to-transparent rounded-full blur-3xl -z-10 animate-float"
-            style={{ animationDelay: "2s" }}
-          ></div>
-
+          {/* Background sombre pour le contraste */}
+          <div className="w-full absolute inset-0 min-h-screen bg-blue-950/50"></div>
           {/* Contentu */}
           <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 flex flex-col items-center text-center space-y-3 max-w-5xl mx-auto">
             <div className="inline-block px-4 py-2 rounded-full border border-secondary/30 bg-secondary/10 backdrop-blur-sm mb-2 md:mb-4 animate-hero-badge group">
@@ -40,7 +34,7 @@ export default function Home() {
             </div>
 
             <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white max-w-4xl leading-tight animate-hero-title">
-              Bienvenue à <strong className="text-accent">Acceent</strong>
+              Bienvenue à <strong className="uppercase">Acceent</strong>
             </h1>
             <p className="text-sm sm:text-base md:text-xl text-gray-100 max-w-3xl leading-relaxed tracking-wide animate-hero-description">
               <span className="font-semibold text-white">

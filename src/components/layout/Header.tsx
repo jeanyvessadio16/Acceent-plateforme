@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="w-full px-6 md:px-10 py-3 flex items-center justify-between bg-primary/80 backdrop-blur-sm border-b border-gray-800 fixed top-0 left-0 z-50">
+      <header className="w-full px-6 md:px-10 py-3 flex items-center justify-between bg-primary/90 backdrop-blur-sm border-b border-gray-800 fixed top-0 left-0 z-50">
         {/* logo ACCEENT */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -35,7 +35,7 @@ export default function Header() {
             variant="ghost"
             size="icon"
             onClick={() => setIsMenu(!isMenuOpen)}
-            className="md:hidden bg-white/10 hover:text-primary cursor-pointer"
+            className="md:hidden bg-white/50 hover:text-primary cursor-pointer"
           >
             {isMenuOpen ? <X /> : <Menu />}
           </Button>
