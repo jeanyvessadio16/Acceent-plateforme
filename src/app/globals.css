@@ -28,11 +28,23 @@
 
   --accent: #846283;
   --accent-foreground: #ffffff;
+
+  /* Spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
 }
 
 body {
   background-color: var(--background);
   color: var(--foreground);
+  font-feature-settings: "rlig" 1, "calt" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* Hero Section Animations */
@@ -60,6 +72,52 @@ body {
   }
 }
 
+@keyframes float-subtle {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(132, 98, 131, 0.7);
+  }
+
+  50% {
+    box-shadow: 0 0 0 10px rgba(132, 98, 131, 0);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes underline-slide {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 100%;
+  }
+}
+
 .animate-hero-badge {
   animation: hero-fade-up 0.8s ease-out 0.2s both;
 }
@@ -74,6 +132,18 @@ body {
 
 .animate-hero-buttons {
   animation: hero-fade-up 0.8s ease-out 0.8s both;
+}
+
+.animate-float {
+  animation: float-subtle 6s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow-pulse 2s infinite;
+}
+
+.animate-slide-left {
+  animation: slide-from-left 0.6s ease-out;
 }
 
 /* Animation partenaire slider */
@@ -101,4 +171,52 @@ body {
 
 .group:hover .animate-partner-slide {
   animation-play-state: paused;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Link underline effect */
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: linear-gradient(90deg, var(--secondary), var(--accent));
+  animation: underline-slide 0.4s ease-out forwards;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Button hover glow */
+.btn-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-glow::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn-glow:hover::before {
+  width: 300px;
+  height: 300px;
 }

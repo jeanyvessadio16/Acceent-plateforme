@@ -4,108 +4,81 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { X, Menu } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { X, Menu, ArrowRight } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenu] = useState(false);
-  const pathname = usePathname();
 
   // liens items
   const navbarItems = [
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/#about" },
-    // { name: "Programmes", href: "/#programmes" },
     { name: "Contact", href: "/#contact" },
   ];
 
   return (
     <>
-      {/* Entete */}
-      <header className="w-full fixed px-6 md:px-10 py-4 flex justify-between items-center bg-primary/80 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300">
+      <header className="w-full px-6 md:px-10 py-3 flex items-center justify-between bg-primary/80 backdrop-blur-sm border-b border-gray-800 fixed top-0 left-0 z-50">
         {/* logo ACCEENT */}
-        <div className="logo relative overflow-hidden group">
-          <Link
-            href="/"
-            className="block transition-transform duration-300 hover:scale-105"
+        <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/logo/logo-acceent.png"
+            alt="Logo Acceent"
+            width={130}
+            height={130}
+          />
+        </Link>
+
+        {/* Bouton menu */}
+        <div className="md:hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setIsMenu(!isMenuOpen)}
+            className="md:hidden bg-white/10 hover:text-primary cursor-pointer"
           >
-            <Image
-              src="/logo/logo-acceent.png"
-              alt="Accent logo"
-              width={100}
-              height={50}
-              className="object-contain"
-            />
-          </Link>
+            {isMenuOpen ? <X /> : <Menu />}
+          </Button>
         </div>
 
-        {/* Bouton de menu */}
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setIsMenu(!isMenuOpen)}
-          className="md:hidden text-white hover:bg-white transition-colors cursor-pointer"
-        >
-          {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </Button>
-
-        {/* navigation menu */}
+        {/* Menu de navigation */}
         <nav className="max-md:hidden">
-          <ul className="flex items-center gap-8">
-            {navbarItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <li key={item.href} className="relative group">
-                  <Link
-                    href={item.href}
-                    className={`text-md font-medium tracking-wide transition-colors duration-300 ${
-                      isActive
-                        ? "text-secondary font-semibold"
-                        : "text-gray-200 hover:text-white"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                  <span
-                    className={`absolute -bottom-2 left-0 h-0.5 bg-secondary transition-all duration-300 ${
-                      isActive ? "w-full" : "w-0 group-hover:w-full"
-                    }`}
-                  ></span>
-                </li>
-              );
-            })}
+          <ul className="flex justify-between items-center">
+            {navbarItems.map((item) => (
+              <li key={item.name}>
+                <Link
+                  href={item.href}
+                  className={`block px-4 py-2 text-white/80 text-lg font-medium  hover:text-white transition-colors duration-300`}
+                  onClick={() => setIsMenu(false)}
+                >
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
 
-      {/* mobile menu */}
-      {isMenuOpen && (
-        <nav className="md:hidden fixed inset-0 top-16 flex flex-col items-center bg-primary/95 backdrop-blur-xl py-10 shadow-2xl z-40 transition-all">
-          <ul className="flex flex-col gap-6 text-center w-full px-6">
-            {navbarItems.map((item) => {
-              const isActive = pathname === item.href;
-              return (
-                <li
-                  key={item.href}
-                  className="w-full border-b border-white/10 pb-4"
-                >
+      {/* Menu mobile */}
+      <nav>
+        <ul>
+          {isMenuOpen && (
+            <div className="fixed top-0 left-0 w-full h-screen bg-primary/90 backdrop-blur-md flex flex-col items-center justify-center gap-3 z-40">
+              {navbarItems.map((item) => (
+                <li key={item.name}>
                   <Link
-                    onClick={() => setIsMenu(false)}
                     href={item.href}
-                    className={`block w-full text-lg transition-colors ${
-                      isActive
-                        ? "text-secondary font-bold"
-                        : "text-gray-200 hover:text-white"
-                    }`}
+                    className={`block px-4 py-2 text-xl font-bold text-white hover:text-primary transition-colors duration-300`}
+                    onClick={() => setIsMenu(false)}
                   >
                     {item.name}
                   </Link>
                 </li>
-              );
-            })}
-          </ul>
-        </nav>
-      )}
+              ))}
+            </div>
+          )}
+        </ul>
+      </nav>
     </>
   );
 }

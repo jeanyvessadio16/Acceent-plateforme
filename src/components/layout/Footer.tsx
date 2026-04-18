@@ -1,89 +1,79 @@
 // Pieds de page ou footer
 
-import { Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone, ChevronRight, Send } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { programmes } from "@/data/footer/programmes";
+import { mediaLinks } from "@/data/footer/linkmedia";
 
 export default function Footer() {
   return (
-    <>
-      <footer className="w-full grid md:grid-cols-2 lg:grid-cols-3 place-content-center place-items-center gap-10 px-10 py-24 bg-primary/80">
-        {/* logo acceent */}
+    <footer className="w-full bg-primary/80 backdrop-blur-md border-t border-white/10 text-white">
+      {/* contenu principal */}
+      <div className="px-10 py-10 text-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 place-content-between gap-10">
+        {/* logo */}
         <div>
           <Image
             src="/logo/logo-acceent.png"
-            width={200}
-            height={200}
             alt="Logo Acceent"
+            width={150}
+            height={50}
           />
         </div>
-
-        {/* contact acceent */}
+        {/* programmes */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Contactez-nous</h2>
-          <ul>
-            <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <Mail className="text-white" /> info@acceent.org
+          <h3 className="text-2xl font-bold mb-2">Programmes</h3>
+          <ul className="space-y-3">
+            {programmes.map((programme) => (
+              <li key={programme.name}>
+                <Link href={programme.href}>{programme.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* contact */}
+        <div className="flex flex-col items-center">
+          <h3 className="text-2xl font-bold mb-2">Contact</h3>
+          <ul className="space-y-3 flex flex-col items-center">
+            <li className="flex items-center gap-3">
+              <MapPin />
+              <span>Quartier Santhiaba, Ziguinchor, Sénégal</span>
             </li>
-            <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <Phone className="text-white" /> +221 33 902 06 45 / +221 76 501
-              91 91
+            <li className="flex items-center gap-3">
+              <Phone />
+              <span>+33 1 23 45 67 89</span>
             </li>
-            <li className="text-gray-300 mb-2 flex items-center gap-2">
-              <MapPin className="text-white" /> Quartier Santhiaba, Ziguinchor,
-              Sénégal
+            <li className="flex items-center gap-3">
+              <Mail />
+              <span>info@acceent.fr</span>
             </li>
           </ul>
         </div>
 
-        {/* reseaux sociaux acceent */}
+        {/* reséaux sociaux */}
         <div>
-          <h2 className="text-2xl font-bold text-white mb-4">Suivez-nous</h2>
-          <ul className="flex space-x-4">
-            <li>
-              <a
-                href="https://www.facebook.com/acceent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/logo/media-social/facebook.svg"
-                  width={40}
-                  height={40}
-                  alt="Facebook"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.twitter.com/acceent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/logo/media-social/twitter.svg"
-                  width={40}
-                  height={40}
-                  alt="Twitter"
-                />
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.instagram.com/acceent"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Image
-                  src="/logo/media-social/instagram.svg"
-                  width={40}
-                  height={40}
-                  alt="Instagram"
-                />
-              </a>
-            </li>
+          <h3 className="text-2xl font-bold mb-2">Suivez-nous</h3>
+          <ul className="flex justify-center items-center gap-3">
+            {mediaLinks.map((link) => (
+              <li key={link.name} className="p-2 bg-white/50 rounded">
+                <Link
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={link.icon}
+                    alt={link.name}
+                    width={24}
+                    height={24}
+                  />
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
-      </footer>
-    </>
+      </div>
+    </footer>
   );
 }

@@ -36,6 +36,10 @@ Site web officiel de l'Association Acceent (Action pour la Contribution Collecti
 
 - **Zustand** - Gestion d'état légère et simple
 
+### Validation des formulaires
+
+- **Zod** - validation des formulaire avec TypeScript d'état légère et simple
+
 ### Outils de développement
 
 - **ESLint** - Linting du code JavaScript/TypeScript
