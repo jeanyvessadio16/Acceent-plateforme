@@ -1,20 +1,16 @@
 // Page à propos
 
 import { type Section } from "@/types/section";
-import { Card, CardDescription, CardTitle } from "@/components/ui/card";
+import { Card, CardDescription } from "@/components/ui/card";
 import { programmes } from "@/data/programmeAcceent";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { aboutVision } from "@/data/aboutVision";
+import { engagementCulturel } from "@/data/aboutVision";
 
 export default function AboutSection({ title, description }: Section) {
-  const aboutVision = {
-    title: "Vision et Missions",
-    description:
-      "Acceent s'engage à autonomiser les populations locales, notamment les jeunes et les femmes, en leur offrant des outils adaptés pour surmonter les défis socio-économiques. L'organisation croit fermement en la création de solutions créatives et adaptées pour améliorer les conditions de vie des communautés locales. Elle aspire à faire de ses bénéficiaires des acteurs du changement, en les dotant des compétences nécessaires pour participer activement au développement de leur territoire. En savoir plus sur notre engagement culturel et social ou consultez notre Agend’Acceent.",
-    imageUrl: "/image/vision2.png",
-  };
   return (
     <>
       {/* Section principale : Qui sommes-nous */}
@@ -62,17 +58,6 @@ export default function AboutSection({ title, description }: Section) {
                 territoire. En savoir plus sur notre engagement culturel et
                 social ou consultez notre Agend&apos;Acceent.
               </p>
-              <div className="pt-4">
-                <Button
-                  asChild
-                  className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105"
-                >
-                  <Link href="/about">
-                    En savoir plus
-                    <ChevronRight className="ml-2 h-5 w-5" />
-                  </Link>
-                </Button>
-              </div>
             </div>
             {/* Image */}
             <div className="order-1 lg:order-2">
@@ -107,7 +92,7 @@ export default function AboutSection({ title, description }: Section) {
                 Nos Domaines d&apos;Action
               </h2>
               <h3 className="text-3xl md:text-5xl font-bold text-primary">
-                Programmes Acceent
+                Programmes ACCEENT
               </h3>
             </div>
             <div className="w-32 h-1.5 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full"></div>
@@ -156,6 +141,50 @@ export default function AboutSection({ title, description }: Section) {
                 </div>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Engagement culturel et social */}
+      <section id="culture" className="w-full px-6 md:px-10 py-16 md:py-20">
+        <div className="max-w-7xl mx-auto">
+          <div className="space-y-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl text-center font-bold text-primary leading-tight">
+              Engagement culturel et social
+            </h2>
+            <div className="w-52 h-1 mx-auto bg-accent rounded-full"></div>
+          </div>
+          <br />
+          <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Contenu texte */}
+            <div className="space-y-6 order-2 lg:order-1">
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl text-accent font-bold  leading-tight">
+                  Carnaval de Santhiaba
+                </h2>
+              </div>
+              <p className="text-lg md:text-xl leading-relaxed text-gray-700">
+                Acceent joue un rôle clé dans la promotion de la culture comme
+                levier de développement durable. Elle est notamment partenaire
+                central du Carnaval de Santhiaba, un événement qui célèbre la
+                diversité culturelle et l&apos;identité locale. À travers ce
+                carnaval, l&apos;organisation réunit divers acteurs culturels et
+                institutionnels pour discuter du rôle de la culture dans le
+                développement des territoires.
+              </p>
+            </div>
+            {/* Image */}
+            <div className="order-1 lg:order-2">
+              <div className="relative">
+                <Image
+                  src={engagementCulturel.imageUrl}
+                  alt={engagementCulturel.title}
+                  width={600}
+                  height={400}
+                  className="w-full h-80 md:h-96 lg:h-96 rounded-2xl object-cover shadow-2xl transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>

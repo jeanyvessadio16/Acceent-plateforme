@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { useState } from "react";
-import { X, Menu, ArrowRight } from "lucide-react";
+import { X, Menu } from "lucide-react";
 
 export default function Header() {
   const [isMenuOpen, setIsMenu] = useState(false);
@@ -13,6 +13,7 @@ export default function Header() {
   const navbarItems = [
     { name: "Accueil", href: "/" },
     { name: "À propos", href: "/#about" },
+    { name: "Culture", href: "/#culture" },
     { name: "Contact", href: "/#contact" },
   ];
 

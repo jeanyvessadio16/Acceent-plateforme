@@ -53,21 +53,8 @@ export default function Home() {
                   href="#about"
                   className="flex items-center justify-center gap-2"
                 >
-                  En savoir plus
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Button>
-              <Button
-                size="lg"
-                className="w-full sm:w-auto border-2 border-white text-white hover:bg-white hover:text-primary transition-all duration-300 transform hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(255,255,255,0.2)] rounded-full px-6 sm:px-8 py-5 sm:py-6 text-sm sm:text-base font-bold bg-transparent"
-                asChild
-              >
-                <Link
-                  href="#programmes"
-                  className="flex items-center justify-center gap-2"
-                >
                   Découvrir nos programmes
-                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5" />
+                  <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
             </div>
