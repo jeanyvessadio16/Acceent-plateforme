@@ -49,7 +49,7 @@ export default function Header() {
               <li key={item.name}>
                 <Link
                   href={item.href}
-                  className={`block px-4 py-2 text-white/80 text-lg font-medium  hover:text-white transition-colors duration-300`}
+                  className={`block px-4 py-2 text-white/80 text-md font-medium  hover:text-white transition-colors duration-300`}
                   onClick={() => setIsMenu(false)}
                 >
                   {item.name}

@@ -10,7 +10,7 @@ import Link from "next/link";
 import { aboutVision } from "@/data/aboutVision";
 import { engagementCulturel } from "@/data/aboutVision";
 
-export default function AboutSection({ title, description }: Section) {
+export default function AboutSection({ description }: Section) {
   return (
     <>
       {/* Section principale : Qui sommes-nous */}
@@ -22,7 +22,7 @@ export default function AboutSection({ title, description }: Section) {
               <h2 className="text-4xl md:text-6xl font-bold text-primary leading-tight">
                 Qui sommes-nous ?
               </h2>
-              <div className="w-32 h-2 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full"></div>
+              {/* <div className="w-32 h-2 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full"></div> */}
             </div>
             {/* Description */}
             <p className="text-lg md:text-xl leading-relaxed text-gray-700 max-w-3xl mx-auto">
@@ -35,7 +35,7 @@ export default function AboutSection({ title, description }: Section) {
       <div className="w-40 h-1.5 mx-auto bg-secondary rounded-full"></div>
 
       {/* Section Vision et Missions */}
-      <section className="w-full px-6 md:px-10 py-16 md:py-20">
+      <section className="w-full px-6 md:px-10 py-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Contenu texte */}

@@ -46,7 +46,7 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Mail />
-              <span>info@acceent.fr</span>
+              <span>info@acceent.org</span>
             </li>
           </ul>
         </div>
