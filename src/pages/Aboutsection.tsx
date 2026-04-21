@@ -115,15 +115,15 @@ export default function AboutSection({ description }: Section) {
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute bottom-4 left-4 z-20">
-                    <h4 className="text-white text-xl font-bold capitalize drop-shadow-lg">
+                    <h4 className="text-white text-2xl font-bold capitalize drop-shadow-lg">
                       {programme.title}
                     </h4>
                   </div>
                 </div>
 
                 {/* Contenu de la carte */}
-                <div className="px-6 py-6 flex flex-col flex-grow">
-                  <CardDescription className="text-gray-600 mb-4 flex-grow leading-relaxed text-base">
+                <div className="px-6 py-3 flex flex-col flex-grow">
+                  <CardDescription className="text-gray-600 mb-2 flex-grow leading-relaxed text-base">
                     {programme.description}
                   </CardDescription>
                   <Button

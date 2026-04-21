@@ -56,7 +56,7 @@ export default function Login() {
               </div>
 
               {/* bouon validation */}
-              <div>
+              <div className="mt-6">
                 <Button
                   type="submit"
                   size={"xl"}

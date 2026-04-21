@@ -1,12 +1,28 @@
 // Composant contact
+"use client";
 
+import { contactSchema, ContactFormData } from "@/schema/contact";
 import { Button } from "../ui/button";
 import { Card } from "../ui/card";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
 import { Send } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 export default function Contact() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    mode: "onChange",
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    console.log("Submitting form with data", data);
+  };
   return (
     <>
       <section className="py-24 px-6 md:px-10 bg-gray-50 flex flex-col justify-center items-center space-y-12">
@@ -28,33 +44,59 @@ export default function Contact() {
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
 
           {/* formulaire */}
-          <form className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
             <div className="space-y-2">
               <Label htmlFor="name" className="text-primary font-semibold">
-                Nom complet
+                Prénom et nom
               </Label>
               <Input
                 type="text"
                 id="name"
-                name="name"
-                placeholder="Votre nom"
                 required
+                {...register("nom_complet")}
+                placeholder="Votre nom"
                 className="py-6 px-4 bg-gray-50/50 border-gray-200 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded-xl"
               />
+              {errors.nom_complet && (
+                <p className="text-red-700">{errors.nom_complet.message}</p>
+              )}
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="email" className="text-primary font-semibold">
-                Adresse Email
+                Email
               </Label>
               <Input
                 type="email"
                 id="email"
-                name="email"
+                required
+                {...register("email")}
                 placeholder="votre@email.com"
+                className="py-6 px-4 bg-gray-50/50 border-gray-200 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded-xl"
+              />
+              {errors.email && (
+                <p className="text-red-700">{errors.email.message}</p>
+              )}
+            </div>
+
+            <div className="space-y-2 md:col-span-2">
+              <Label htmlFor="phone" className="text-primary font-semibold">
+                Téléphone
+              </Label>
+              <Input
+                type="tel"
+                id="phone"
+                {...register("phone")}
+                placeholder="Votre numéro téléphone"
                 required
                 className="py-6 px-4 bg-gray-50/50 border-gray-200 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded-xl"
               />
+              {errors.phone && (
+                <p className="text-red-700">{errors.phone.message}</p>
+              )}
             </div>
 
             <div className="space-y-2 md:col-span-2">
@@ -64,11 +106,14 @@ export default function Contact() {
               <Input
                 type="text"
                 id="subject"
-                name="subject"
+                {...register("sujet")}
                 placeholder="Sujet de votre message"
                 required
                 className="py-6 px-4 bg-gray-50/50 border-gray-200 focus-visible:ring-secondary focus-visible:ring-offset-2 rounded-xl"
               />
+              {errors.sujet && (
+                <p className="text-red-700">{errors.sujet.message}</p>
+              )}
             </div>
 
             <div className="space-y-2 md:col-span-2">
@@ -77,15 +122,19 @@ export default function Contact() {
               </Label>
               <textarea
                 id="message"
-                name="message"
+                {...register("message")}
                 required
                 placeholder="Comment pouvons-nous vous aider ?"
                 className="w-full min-h-[150px] p-4 bg-gray-50/50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-secondary focus:ring-offset-2 transition-all resize-y"
               ></textarea>
+              {errors.message && (
+                <p className="text-red-700">{errors.message.message}</p>
+              )}
             </div>
 
             <div className="md:col-span-2 pt-4">
               <Button
+                disabled={isSubmitting}
                 type="submit"
                 className="w-full sm:w-auto text-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl rounded-full px-10 py-6 font-bold group cursor-pointer"
               >

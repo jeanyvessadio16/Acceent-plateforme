@@ -1,17 +1,17 @@
 export const mediaLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/acceent",
+    href: "https://www.facebook.com/share/1CZXwrYGEB/",
     icon: "/logo/media-social/facebook.svg",
   },
   {
     name: "Twitter",
-    href: "https://twitter.com/acceent",
+    href: "#",
     icon: "/logo/media-social/twitter.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/acceent",
+    href: "https://www.instagram.com/campus_acceent?igsh=ZGxrbGtoYzJkd2Zn",
     icon: "/logo/media-social/instagram.svg",
   },
 ];

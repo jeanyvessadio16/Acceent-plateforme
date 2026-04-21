@@ -22,7 +22,7 @@ export default function Home() {
           <div
             className="absolute inset-0 bg-cover bg-to bg-no-repeat w-full h-full"
             style={{
-              backgroundImage: "url('/image/acceentImage.jpg')",
+              backgroundImage: "url('/image/banner.jpg')",
               backgroundAttachment: "fixed",
             }}
           ></div>
