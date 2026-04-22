@@ -123,7 +123,7 @@ export default function AboutSection({ description }: Section) {
 
                 {/* Contenu de la carte */}
                 <div className="px-6 py-3 flex flex-col flex-grow">
-                  <CardDescription className="text-gray-600 mb-2 flex-grow leading-relaxed text-base">
+                  <CardDescription className="text-gray-600 mb-2 flex-grow leading-relaxed text-lg">
                     {programme.description}
                   </CardDescription>
                   <Button

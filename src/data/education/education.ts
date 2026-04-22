@@ -7,7 +7,7 @@ export const educationPrograms: programmesEducation[] = [
     description:
       "Accompagnement des jeunes filles vulnérables avec des formations adaptées et des activités de confiance en soi",
     image: "/image/acceent4ELLES.jpeg",
-    lien: "/education/programme1",
+    lien: "/landing",
   },
   {
     id: 2,

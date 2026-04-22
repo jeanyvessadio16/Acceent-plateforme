@@ -1,4 +1,4 @@
-import { EducationHeader } from "../../types/educationHeader";
+import { EducationHeader } from "@/types/bannerHeader";
 
 export default function LayoutHeader({ titre, image }: EducationHeader) {
   return (
