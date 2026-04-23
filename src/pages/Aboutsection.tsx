@@ -155,7 +155,7 @@ export default function AboutSection({ description }: Section) {
             <div className="w-52 h-1 mx-auto bg-accent rounded-full"></div>
           </div>
           <br />
-          <div className="mt-4 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="mt-4 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Contenu texte */}
             <div className="space-y-6 order-2 lg:order-1">
               <div className="space-y-4">
