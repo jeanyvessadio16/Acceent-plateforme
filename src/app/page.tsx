@@ -20,7 +20,7 @@ export default function Home() {
         <section className="w-full relative min-h-screen flex items-center justify-center">
           {/* Background Image*/}
           <div
-            className="absolute inset-0 bg-cover bg-to bg-no-repeat w-full h-full"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat w-full h-full"
             style={{
               backgroundImage: "url('/image/banner.jpg')",
               backgroundAttachment: "fixed",

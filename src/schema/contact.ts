@@ -21,7 +21,7 @@ export const contactSchema = z.object({
   message: z
     .string()
     .min(25, "Le message est trop court")
-    .max(500, "Votre message est long")
+    .max(1000, "Votre message est long")
     .trim(),
 });
 
