@@ -23,7 +23,9 @@ export default function EducationLayout({
   return (
     <>
       <section>
-        <Header />
+        <div className="bg-blue-950/30">
+          <Header />
+        </div>
         {children}
         <Footer />
       </section>
