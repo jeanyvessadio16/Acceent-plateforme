@@ -41,7 +41,7 @@ export default function Acceent4ELLES() {
         <div className="mx-auto px-6 md:px-10 relative text-white z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 ACCEENT4ELLES
               </h1>
               <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
@@ -67,7 +67,7 @@ export default function Acceent4ELLES() {
                 <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                   <BookOpen className="w-6 h-6 text-primary" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary">
                   Le programme propose un accompagnement global
                 </h2>
               </div>
@@ -101,7 +101,7 @@ export default function Acceent4ELLES() {
                 <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
                   <Award className="w-6 h-6 text-secondary" />
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-primary">
+                <h2 className="text-3xl md:text-4xl font-bold text-primary">
                   Notre approche
                 </h2>
               </div>
