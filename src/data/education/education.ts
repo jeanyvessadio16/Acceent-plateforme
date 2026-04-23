@@ -6,7 +6,7 @@ export const educationPrograms: programmesEducation[] = [
     titre: "ACCEENT4ELLES",
     description:
       "Accompagnement des jeunes filles vulnérables avec des formations adaptées et des activités de confiance en soi",
-    image: "/image/acceent4ELLES.jpeg",
+    image: "/image/acceentImage.jpg",
     lien: "/landing",
   },
   {

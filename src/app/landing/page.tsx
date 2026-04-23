@@ -13,14 +13,8 @@ import {
   approches,
 } from "@/data/education/listAccompagnement";
 import { Metadata } from "next";
-import {
-  Users,
-  Target,
-  TrendingUp,
-  Heart,
-  BookOpen,
-  Award,
-} from "lucide-react";
+import { Target, Heart, BookOpen, Award } from "lucide-react";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "ACCEENT4ELLES",
@@ -40,95 +34,31 @@ export default function Acceent4ELLES() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/image/pattern.svg')] opacity-5"></div>
-        <div className="container mx-auto px-6 md:px-10 relative z-10">
+      <section
+        style={{ backgroundImage: "url(/image/acceentImage.jpg)" }}
+        className="relative bg-cover bg-center bg-fixed py-20 md:py-28 overflow-hidden"
+      >
+        <div className="mx-auto px-6 md:px-10 relative text-white z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-primary leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold leading-tight">
                 ACCEENT4ELLES
               </h1>
-              <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
+              <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                 Accompagner les jeunes filles vers un avenir meilleur
               </p>
-            </div>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Un programme dédié à l&apos;émancipation et à la réussite des
-              jeunes filles en situation de vulnérabilité.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8 py-3">
-                En savoir plus
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3">
-                Nous contacter
-              </Button>
+              <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                Un programme dédié à l&apos;émancipation et à la réussite des
+                jeunes filles en situation de vulnérabilité.
+              </p>
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-white to-transparent"></div>
-      </section>
-
-      {/* section statistiques */}
-      <section className="py-16 md:py-20 bg-white">
-        <div className="container mx-auto px-6 md:px-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-              Nos Impact
-            </h2>
-            <div className="w-24 h-1 bg-accent mx-auto rounded-full"></div>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {/* bénéficiaire */}
-            <Card className="text-center hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Users className="w-8 h-8 text-primary" />
-                </div>
-                <CardTitle className="text-3xl text-primary font-bold mb-2">
-                  500+
-                </CardTitle>
-                <CardDescription className="text-lg text-gray-600">
-                  Bénéficiaires accompagnées
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            {/* réalisation */}
-            <Card className="text-center hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Target className="w-8 h-8 text-secondary" />
-                </div>
-                <CardTitle className="text-3xl text-secondary font-bold mb-2">
-                  15+
-                </CardTitle>
-                <CardDescription className="text-lg text-gray-600">
-                  Projets réalisés avec succès
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            {/* taux de réussite */}
-            <Card className="text-center hover:shadow-lg transition-shadow duration-300 border-0 shadow-md">
-              <CardContent className="pt-8 pb-6">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <TrendingUp className="w-8 h-8 text-accent" />
-                </div>
-                <CardTitle className="text-3xl text-accent font-bold mb-2">
-                  95%
-                </CardTitle>
-                <CardDescription className="text-lg text-gray-600">
-                  Taux de réussite
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
+        <div className="absolute inset-0 top-0 bg-black/50"></div>
       </section>
 
       {/* composant AboutProgramme amélioré */}
-      <div className="py-10">
+      <div className="py-16">
         <AboutPrgramme {...acceent4elles}>
           <div className="grid lg:grid-cols-2 gap-12">
             {/* programme */}
@@ -141,17 +71,22 @@ export default function Acceent4ELLES() {
                   Le programme propose un accompagnement global
                 </h2>
               </div>
-              <div className="space-y-3">
-                {listAccompagnement.map((list) => (
-                  <div
-                    key={list.nom}
-                    className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <Heart className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
-                    <span className="text-lg text-gray-700">{list.nom}</span>
-                  </div>
-                ))}
-              </div>
+              <details>
+                <summary className="text-lg font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors">
+                  Liste d&apos;accompagnement
+                </summary>
+                <div className="space-y-3 mt-4">
+                  {listAccompagnement.map((list) => (
+                    <div
+                      key={list.nom}
+                      className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <Heart className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">{list.nom}</span>
+                    </div>
+                  ))}
+                </div>
+              </details>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Avec ACCENT4ELLES, nous croyons qu&apos;aucune situation
                 n&apos;est définitive. Chaque fille mérite une seconde chance,
@@ -170,19 +105,24 @@ export default function Acceent4ELLES() {
                   Notre approche
                 </h2>
               </div>
-              <div className="space-y-3">
-                {approches.map((approche) => (
-                  <div
-                    key={approche.nom}
-                    className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                  >
-                    <Target className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
-                    <span className="text-lg text-gray-700">
-                      {approche.nom}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <details>
+                <summary className="text-lg font-semibold text-primary cursor-pointer hover:text-primary/80 transition-colors">
+                  Notre approche
+                </summary>
+                <div className="space-y-3 mt-4">
+                  {approches.map((approche) => (
+                    <div
+                      key={approche.nom}
+                      className="flex items-start space-x-3 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
+                    >
+                      <Target className="w-5 h-5 text-secondary mt-0.5 flex-shrink-0" />
+                      <span className="text-lg text-gray-700">
+                        {approche.nom}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </details>
               <p className="text-lg text-gray-600 leading-relaxed">
                 Notre approche repose sur un accompagnement global et durable,
                 combinant formation continue, mentorat personnalisé et suivi
@@ -192,6 +132,13 @@ export default function Acceent4ELLES() {
             </div>
           </div>
         </AboutPrgramme>
+      </div>
+
+      {/* lien vers TUT'TANK */}
+      <div className="p-10 flex flex-col justify-center items-center">
+        <Button asChild size={"xl"} className="mx-auto bg-accent">
+          <Link href="/tuttank">Programme TUT&apos;TANK</Link>
+        </Button>
       </div>
 
       {/* footer */}
