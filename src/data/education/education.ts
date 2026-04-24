@@ -15,6 +15,6 @@ export const educationPrograms: programmesEducation[] = [
     description:
       "Développement de la pensée critique et soutien familial pour une meilleure éducation des enfants.",
     image: "/image/tut-tank.jpeg",
-    lien: "/education/programme2",
+    lien: "/tuttank",
   },
 ];

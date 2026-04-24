@@ -69,7 +69,7 @@ export default function ContactForm() {
                   id="name"
                   type="text"
                   {...register("name")}
-                  placeholder="Entrer votre prénom et nom"
+                  placeholder="Entrez votre prénom et nom"
                   className={`border-gray-300 ${errors.name ? "border-red-500" : ""}`}
                 />
                 {errors.name && (
@@ -86,7 +86,7 @@ export default function ContactForm() {
                   id="email"
                   type="email"
                   {...register("email")}
-                  placeholder="Entrez votre email"
+                  placeholder="Entrez votre adresse email"
                   className={`border-gray-300 ${errors.email ? "border-red-500" : ""}`}
                 />
                 {errors.email && (
@@ -102,7 +102,7 @@ export default function ContactForm() {
                 <Textarea
                   id="message"
                   {...register("message")}
-                  placeholder="Ecrivez votre ici"
+                  placeholder="Ecrivez votre message ici"
                   className={`border-gray-300 h-32 ${errors.message ? "border-red-500" : ""}`}
                 />
                 {errors.message && (
@@ -132,8 +132,8 @@ export default function ContactForm() {
           <DialogHeader>
             <DialogTitle>Message envoyé !</DialogTitle>
             <DialogDescription>
-              Votre message a été envoyé avec succès. Nous vous répondrons
-              bientôt.
+              Votre message a été envoyé avec succès. Nous vous répondrons 48
+              heures.
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
