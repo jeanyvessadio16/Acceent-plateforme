@@ -65,7 +65,7 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-hero-buttons w-full sm:w-auto">
               <Button
                 size="lg"
-                className="w-full sm:w-auto bg-gradient-to-r from-secondary to-purple-600 hover:from-purple-600 hover:to-secondary text-white transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(132,98,131,0.5)] rounded-full px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-bold group btn-glow border-none"
+                className="w-full sm:w-auto text-white transition-all duration-500 transform hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(132,98,131,0.5)] rounded-full px-8 sm:px-10 py-6 sm:py-8 text-base sm:text-lg font-bold group btn-glow border-none"
                 asChild
               >
                 <Link
